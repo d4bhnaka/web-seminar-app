@@ -32,7 +32,7 @@ interface State {
   showPassword: boolean;
 }
 
-export const FormArea: React.FC<Props> = () => {
+export const LoginForm: React.FC<Props> = () => {
   const [state, setState] = useState<State>({
     email: "",
     password: "",
@@ -62,11 +62,11 @@ export const FormArea: React.FC<Props> = () => {
 
   const login = async () => {
     try {
-      await firebase
+      const result = await firebase
         .auth()
         .signInWithEmailAndPassword(state.email, state.password);
       // 成功時の処理
-      alert("ログインに成功しました😊");
+      alert(`ログインに成功しました😊 ${result.user?.email}`);
     } catch (error) {
       console.error(error);
       // 失敗時の処理

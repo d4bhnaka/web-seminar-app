@@ -1,23 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import styles from './App.module.css';
-// components
-import { FormArea } from './components/FormArea';
-// material
-import { Container } from '@material-ui/core';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// screens
+// import { Auth } from "./components/Auth";
+import { DashboardScreen } from "./screens/DashboardScreen";
+import { LoginScreen } from "./screens/LoginScreen";
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-      </header>
-      <div className={styles.container}>
-        <Container>
-          <h2 className={styles.headline}>ログイン</h2>
-          <FormArea />
-        </Container>
-      </div>
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/dashboard" component={DashboardScreen} />
+          <Route exact path="/login" component={LoginScreen} />
+          {/* <Route exact path="/" component={} /> */}
+        </Switch>
+      </Router>
     </div>
   );
 }
