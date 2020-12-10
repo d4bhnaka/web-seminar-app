@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { Auth } from "./components/Auth";
 import { DashboardScreen } from "./screens/DashboardScreen";
 import { LoginScreen } from "./screens/LoginScreen";
+import { IndexPage } from "./pages/index";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/dashboard" component={DashboardScreen} />
           <Route exact path="/login" component={LoginScreen} />
-          {/* <Route exact path="/" component={} /> */}
+          <Route exact path="/" component={IndexPage} />
         </Switch>
       </Router>
     </div>
