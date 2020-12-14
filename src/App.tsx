@@ -7,9 +7,13 @@ import { DashboardScreen } from "./screens/DashboardScreen";
 import { LoginScreen } from "./screens/LoginScreen";
 import { IndexPage } from "./pages/index";
 
+// components
+import { CurrentUser } from "./components/CurrentUser";
+
 function App() {
   return (
     <div>
+      <CurrentUser />
       <Router>
         <Switch>
           <Route exact path="/dashboard" component={DashboardScreen} />
